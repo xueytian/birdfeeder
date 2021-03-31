@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'SSPBF.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'sspbf',
+#         'NAME': 'sspbf_1',
 #         'USER':'root',
 #         'PASSWORD':'',
 #         'HOST':'localhost',
