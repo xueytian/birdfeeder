@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="block" style="margin-top: 8%; margin-left: 0%; color:black;">
+    {% if pic_list %}
+        <div class="grid-container">
+        {% for pic in pic_list %}
+        <div class="grid-item">
+            <div class="card" style="width: 18em;">
+                <img src="{{pic.image.url}}" alt="Avatar" style="width:100%">
+                <div class="card-body">
+                <h5 class="card-title">{{ pic.image_date }}</h5>
+                </div>
+            </div>
+        </div>  
+        {% endfor %}
+    </div>
+    
+    {% else %}
+    <div class="else">
+        <h1>No pictures are available.</h1>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="block" style="margin-top: 8%; margin-left: 0%; color:black;">
+    {% if message_list_unread or message_list_read %}
+        {% if message_list_unread %}
+            {% for message in message_list_unread %}
+                <div class="unread">
+                <h2>Birds have eaten all the foods, please add food to the feeder.</h2>
+                <p style="float: right;">{{ message.notice_date }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if message_list_read %}
+            {% for message in message_list_read %}
+                <div class="read">
+                <h2>Birds have eaten all the foods, please add food to the feeder.</h2>
+                <p style="float: right;">{{ message.notice_date }}</p>
+                </div>>
+            {% endfor %}
+        {% endif %}
+    {% else %}
+    <div class="else">
+        <h1>No Message.</h1>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}
