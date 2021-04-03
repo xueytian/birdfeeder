@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class image(models.Model):
     image_date      =   models.DateTimeField('image date')
-    image           =   models.ImageField(upload_to='pictures')
+    image           =   models.CharField(max_length=60)
     species         =   models.IntegerField()
 
 class food(models.Model):
