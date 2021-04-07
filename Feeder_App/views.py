@@ -5,7 +5,7 @@ from .models import image, food
 import copy
 
 def index(request):
-    pic_list = image.objects.all()
+    pic_list = image.objects.all().order_by('image_date')
     return render(request, 'pic.html', {'pic_list': pic_list})
 
 def message(request):
