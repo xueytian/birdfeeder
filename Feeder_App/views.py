@@ -5,7 +5,19 @@ from .models import image, food
 import copy
 
 def index(request):
-    pic_list = image.objects.all().order_by('image_date')
+    if request.method=='POST':
+        if request.POST.get('species'):
+            species = request.POST.get('species')
+            if species == 'a':
+                pic_list = image.objects.all().order_by('-image_date')
+            elif species == 'b':
+                pic_list = image.objects.filter(species=2).order_by('-image_date')
+            else:
+                pic_list = image.objects.filter(species=1).order_by('-image_date')
+        else:
+            pic_list = image.objects.all().order_by('-image_date')
+    else:
+        pic_list = image.objects.all().order_by('-image_date')
     return render(request, 'pic.html', {'pic_list': pic_list})
 
 def message(request):

@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="block" style="margin-top: 8%; margin-left: 0%; color:black;">
+    <form method="POST" style="color:black;">
+        {% csrf_token %}   
+        <div class="form-group">           
+        <label for="species">Select species</label>
+        <select name="species" id="species">
+            <option value="a" selected data-default></option>
+            <option value="a">All</option>
+            <option value="s">Squirrels</option>
+            <option value="b">Birds</option>
+        </select>
+        <button type="submit" class="btn-lg btn-primary">Show</button>
+        </div>
+    </form>
     {% if pic_list %}
         <div class="grid-container">
         {% for pic in pic_list %}

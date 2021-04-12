@@ -6,7 +6,7 @@
             {% for message in message_list_unread %}
                 <div class="unread">
                 <h2>Birds have eaten all the foods, please add food to the feeder.</h2>
-                <p style="float: right;">{{ message.notice_date }}</p>
+                <p style="float: right">{{ message.notice_date }}</p>
                 </div>
             {% endfor %}
         {% endif %}
@@ -14,8 +14,8 @@
             {% for message in message_list_read %}
                 <div class="read">
                 <h2>Birds have eaten all the foods, please add food to the feeder.</h2>
-                <p style="float: right;">{{ message.notice_date }}</p>
-                </div>>
+                <p style="float: right">{{ message.notice_date }}</p>
+                </div>
             {% endfor %}
         {% endif %}
     {% else %}
